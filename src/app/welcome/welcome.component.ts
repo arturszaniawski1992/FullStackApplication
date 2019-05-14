@@ -12,8 +12,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.message = 'sdas';
-    console.log(this.message);
   }
 
 }

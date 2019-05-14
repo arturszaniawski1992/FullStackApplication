@@ -5,20 +5,25 @@ import {AppComponent} from './app.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {LoginComponent} from './login/login.component';
-import {FormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing/app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     FormsModule,
-    RouterModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],

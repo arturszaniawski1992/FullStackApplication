@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {invalid} from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +10,18 @@ export class LoginComponent implements OnInit {
   password: string;
   loginErrorMessage = 'Invalid credentials';
   loginCorrect = true;
+  isAccepted = false;
+  regulationsMessage = 'Zaakceptuj regulamin!';
+
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  acceptRegulations() {
+    this.isAccepted = !this.isAccepted;
   }
 
   handleLogin(): void {

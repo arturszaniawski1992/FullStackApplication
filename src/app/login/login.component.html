@@ -1,13 +1,50 @@
-<div>
-  <div *ngIf="!loginCorrect">
-    <small>{{loginErrorMessage}}</small>
+<div class="main-w3layouts wrapper">
+  <h1>Zarejestruj się</h1>
+  <div class="main-agileinfo">
+    <div class="agileits-top">
+      <form action="#" method="post">
+        <input class="text" type="text" name="Username" placeholder="Username" required="">
+        <input class="text email" type="email" name="email" placeholder="Email" required="">
+        <input class="text" type="password" name="password" placeholder="Password" required="">
+        <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+        <div class="wthree-text">
+          <label class="anim">
+            <input id="checkbox" type="checkbox" class="checkbox" required="" (click)="acceptRegulations()">
+            <span>Akceptuje warunki zawarte w Regulaminie</span>
+          </label>
+          <p><a href="/regulations">Regulamin</a></p>
+
+          <div class="clear"></div>
+        </div>
+        <div *ngIf="isAccepted">
+          <input type="submit" value="SIGNUP"/>
+        </div>
+        <div *ngIf="!isAccepted">
+          <br>
+          <p>Proszę zaakcpetować regulamin!</p>
+          <br>
+        </div>
+      </form>
+      <p>Masz konto?<a href="/"> Zaloguj się!</a></p>
+    </div>
   </div>
-  <div class="container">
-    Username: <input type="text" name="username" [(ngModel)]="username"/>
-    Password: <input type="password" name="password" [(ngModel)]="password"/>
-    <button (click)=handleLogin()>Login</button>
+  <!-- copyright -->
+  <div class="colorlibcopy-agile">
+    <p>© 2019 Artur Szaniawski. All rights reserved | Design by <a href="https://github.com/arturszaniawski1992"
+                                                                   target="_blank">Artur Szaniawski</a></p>
   </div>
+  <!-- //copyright -->
+  <ul class="colorlib-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </div>
-
-
 
