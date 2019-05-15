@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  isAccpeted = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  acceptRegulations() {
+    this.isAccpeted = !this.isAccpeted;
+  }
 }

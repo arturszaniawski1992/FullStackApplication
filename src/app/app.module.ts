@@ -9,6 +9,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { ErrorComponent } from './error/error.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { BasketComponent } from './basket/basket.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { RegisterComponent } from './register/register.component';
     WelcomeComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ErrorComponent,
+    FooterComponent,
+    ProductsListComponent,
+    BasketComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

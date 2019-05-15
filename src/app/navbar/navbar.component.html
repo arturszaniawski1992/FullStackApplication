@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="position: fixed;" id="mainNav">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">Climbing ON-SIGHT</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -10,22 +10,25 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/shop">Shop</a>
+          <a class="nav-link js-scroll-trigger" routerLink="products">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/shop">BASKET</a>
+          <a class="nav-link js-scroll-trigger" routerLink="basket">Basket</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/regulations">Regulations</a>
+          <a class="nav-link js-scroll-trigger" routerLink="regulations">Regulations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/about">About</a>
+          <a class="nav-link js-scroll-trigger" routerLink="about">About</a>
+        </li>
+        <li *ngIf="authenticationService.isUserLoggedIn()" class="nav-item">
+          <a class="nav-link js-scroll-trigger" routerLink="login">Login</a>
+        </li>
+        <li *ngIf="!authenticationService.isUserLoggedIn()" class="nav-item">
+          <a class="nav-link js-scroll-trigger" routerLink="products">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/register">Register</a>
+          <a class="nav-link js-scroll-trigger" routerLink="register">Register</a>
         </li>
       </ul>
     </div>

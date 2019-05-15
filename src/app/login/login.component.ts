@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {HardcoderAuthenticationService} from '../service/hardcoder-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -8,25 +10,20 @@ import {Component, OnInit} from '@angular/core';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
-  loginErrorMessage = 'Invalid credentials';
   loginCorrect = true;
-  isAccepted = false;
-  regulationsMessage = 'Zaakceptuj regulamin!';
+  loginErrorMessage = 'Nieprawidłowa nazwa lub hasło!';
 
 
-  constructor() {
+  constructor(private router: Router, private authenticationService: HardcoderAuthenticationService) {
   }
 
   ngOnInit() {
   }
 
-  acceptRegulations() {
-    this.isAccepted = !this.isAccepted;
-  }
-
   handleLogin(): void {
-    if (this.username === 'admin' && this.password === 'admin') {
+    if (this.authenticationService.authenticate(this.username, this.password)) {
       this.loginCorrect = true;
+      this.router.navigate(['products']);
     } else {
       this.loginCorrect = false;
     }
