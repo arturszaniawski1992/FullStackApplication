@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HardcoderAuthenticationService} from '../service/hardcoder-authentication.service';
 
 @Component({
@@ -8,9 +8,15 @@ import {HardcoderAuthenticationService} from '../service/hardcoder-authenticatio
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authenticationService: HardcoderAuthenticationService) { }
+
+  constructor(private authenticationService: HardcoderAuthenticationService) {
+  }
 
   ngOnInit() {
+  }
+
+  handleLogout(): void {
+    this.authenticationService.logOut();
   }
 
 }

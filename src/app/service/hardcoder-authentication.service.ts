@@ -18,6 +18,11 @@ export class HardcoderAuthenticationService {
   }
 
   isUserLoggedIn() {
-    sessionStorage.getItem('authenticaterUser');
+    const user = sessionStorage.getItem('authenticaterUser');
+    return !(user === null);
+  }
+
+  logOut() {
+    sessionStorage.removeItem('authenticaterUser');
   }
 }
